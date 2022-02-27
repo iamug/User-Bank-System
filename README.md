@@ -36,6 +36,7 @@ $ npm install
 
 ```bash
 # Connect to database and create tables
+# Edit database config in knexfile.js  and run migration
 $ npx knex migrate:latest
 
 # development

@@ -19,7 +19,7 @@ export class TransactionsService {
   private readonly Transactions = () => this.knex<Transaction>('transactions');
   private readonly Users = () => this.knex<User>('users');
 
-  async fundAccount(data: FundAccountDto) {
+  async fundAccount(data: FundAccountDto): Promise<{ message: string }> {
     const { email, amount } = data;
     const user = await this.usersService.findOneByEmail(email);
     if (!user) throw new NotFoundException('User Does Not Exist.');
@@ -30,7 +30,9 @@ export class TransactionsService {
     return { message: 'Account was successfully credited' };
   }
 
-  async withdrawFromAccount(data: WithdrawFromAccountDto) {
+  async withdrawFromAccount(
+    data: WithdrawFromAccountDto,
+  ): Promise<{ message: string }> {
     const { email, amount } = data;
     const user = await this.usersService.findOneByEmail(email);
     if (!user) throw new NotFoundException('User Does Not Exist.');
@@ -43,7 +45,9 @@ export class TransactionsService {
     return { message: 'Account was successfully debited' };
   }
 
-  async transferToAccount(data: TransferToAccountDto) {
+  async transferToAccount(
+    data: TransferToAccountDto,
+  ): Promise<{ message: string }> {
     try {
       await this.knex.transaction(async (trx) => {
         const { emailTo, emailFrom, amount } = data;

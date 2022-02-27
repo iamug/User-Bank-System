@@ -2,7 +2,7 @@ import { Controller, Post, Body, UseGuards } from '@nestjs/common';
 import { ClassSerializerInterceptor, UseInterceptors } from '@nestjs/common';
 import { Get, BadRequestException } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Public } from 'src/shared/decorators/request/public-request.decorator';
+import { Public } from '../shared/decorators/request/public-request.decorator';
 import { AuthService } from './auth.service';
 import { AuthResponseDto, AuthUserDto } from './dto/auth-response.dto';
 import { LoginDto } from './dto/login.dto';

@@ -3,7 +3,7 @@ import { IsEmail, IsNotEmpty, IsNumberString } from 'class-validator';
 
 export class AuthUserDto {
   @ApiProperty()
-  id: string;
+  id: number;
 
   @ApiProperty()
   name: string;
@@ -15,13 +15,13 @@ export class AuthUserDto {
   email: string;
 
   @ApiProperty()
-  isEnabled: boolean;
+  isEnabled: boolean | number;
 
   @ApiProperty()
-  createdAt: Date;
+  createdAt: Date | string;
 
   @ApiProperty()
-  updatedAt: Date;
+  updatedAt: Date | string;
 }
 
 export class AuthResponseDto {

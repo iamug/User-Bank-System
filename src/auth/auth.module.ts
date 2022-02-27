@@ -15,6 +15,6 @@ import { Reflector } from '@nestjs/core';
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy, Reflector],
-  exports: [AuthService, AuthModule],
+  exports: [AuthService],
 })
 export class AuthModule {}

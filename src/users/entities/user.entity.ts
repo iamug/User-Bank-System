@@ -1,5 +1,5 @@
 export class User {
-  id: string;
+  id: number;
 
   name: string;
 
@@ -9,9 +9,9 @@ export class User {
 
   balance: number;
 
-  isEnabled: boolean;
+  isEnabled: boolean | number;
 
-  createdAt: Date;
+  createdAt: Date | string;
 
-  updatedAt: Date;
+  updatedAt: Date | string;
 }
