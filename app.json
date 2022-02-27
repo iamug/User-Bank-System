@@ -17,10 +17,11 @@
      }
    },
    "image": "heroku/nodejs",
-   "addons": ["cleardb:ignite","newrelic:wayne","sendgrid:starter"],
+   "addons": ["cleardb:ignite"],
    "buildpacks": [
      {
        "url": "heroku/nodejs"
      }
-   ]
+   ],
+   "stack": "heroku-20"
  }
