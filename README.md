@@ -35,6 +35,9 @@ $ npm install
 ## Running the app
 
 ```bash
+# Connect to database and create tables
+$ npx knex migrate:latest
+
 # development
 $ npm run start
 

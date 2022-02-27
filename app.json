@@ -17,7 +17,7 @@
      }
    },
    "image": "heroku/nodejs",
-   "addons": ["heroku-postgresql"],
+   "addons": ["cleardb:ignite","newrelic:wayne","sendgrid:starter"],
    "buildpacks": [
      {
        "url": "heroku/nodejs"

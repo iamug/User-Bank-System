@@ -41,6 +41,6 @@ export class TransferToAccountDto {
 
   @IsNotEmpty()
   @IsNumber()
-  @ApiProperty({ description: 'Amount ot fund user account' })
+  @ApiProperty({ description: 'Amount to tranfer' })
   amount: number;
 }
