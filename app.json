@@ -1,0 +1,26 @@
+{
+   "name": "User Bank System",
+   "description": "User banking system endpoints to create accounts, fund account, transfer and withdraw from account.",
+   "success_url": "/api",
+   "scripts":{
+     "predeploy": "npm install && npm run build"
+   },
+   "env": {
+     "NODE_ENV": {
+       "description": "Environment [production/development]",
+       "value": "production"
+     }
+   },
+   "formation": {
+     "web": {
+       "quantity": 1
+     }
+   },
+   "image": "heroku/nodejs",
+   "addons": ["heroku-postgresql"],
+   "buildpacks": [
+     {
+       "url": "heroku/nodejs"
+     }
+   ]
+ }
