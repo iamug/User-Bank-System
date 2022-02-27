@@ -18,12 +18,7 @@ import { TransactionsModule } from './transactions/transactions.module';
         client: 'mysql',
         version: '5.7',
         useNullAsDefault: true,
-        connection: {
-          host: '127.0.0.1',
-          user: 'root',
-          password: '',
-          database: 'user-bank',
-        },
+        connection: process.env.DATABASE_URL,
       },
     }),
     AuthModule,

@@ -7,6 +7,7 @@ module.exports = {
   development: {
     client: 'mysql',
     connection: {
+      host: '127.0.0.1',
       database: 'user-bank',
       user: 'root',
       password: '',
@@ -17,16 +18,13 @@ module.exports = {
     },
   },
 
-  staging: {
-    client: 'postgresql',
+  testing: {
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
-    },
-    pool: {
-      min: 2,
-      max: 10,
+      host: '127.0.0.1',
+      database: 'user-bank',
+      user: 'root',
+      password: '',
     },
     migrations: {
       directory: './database/migrations/',
@@ -35,16 +33,8 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
-    },
-    pool: {
-      min: 2,
-      max: 10,
-    },
+    client: 'mysql',
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: './database/migrations/',
       tableName: 'knex_migrations',
